@@ -7,7 +7,7 @@ import CardDetails from '../Card/CardDetails'
 const Pages = () => {
   return (
     <div>
-      <CardDetails/>
+      {/* <Home/> */}
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route/>
