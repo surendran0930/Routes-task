@@ -1,13 +1,20 @@
-import React from 'react'
+import React from "react";
 
-const Card = ({img, title, price}) => {
+const Card = ({ image, title, price }) => {
+  // console.log(image);
   return (
-    <div>
-      <image src={img} />
-        <h1>{title}</h1>
-        <p>{price}</p>
+    <div className=" w-[200px] shadow-xl ">
+      <div className="flex justify-center">
+        <img src={image} className="w-[115px] h-[115px]" />
+      </div>
+      <div className="overflow-hidden text-ellipsis whitespace-nowrap bg-[#fefaef]">
+        <p >{title}</p>
+      </div>
+      <div className="bg-[#f6f1ea]">
+        <p className="text-[#999] hover:text-[#000]">{price}</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

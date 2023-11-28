@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Pages from "./components/Routes-pages/Pages";
+import Pages from "./components/Routes-pages/RoutingPages";
 
 function App() {
   return (
