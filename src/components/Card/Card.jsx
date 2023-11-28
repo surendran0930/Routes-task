@@ -3,7 +3,7 @@ import React from "react";
 const Card = ({ image, title, price }) => {
   // console.log(image);
   return (
-    <div className=" w-[200px] shadow-xl ">
+    <div className=" w-[200px] shadow-xl h-max ">
       <div className="flex justify-center">
         <img src={image} className="w-[115px] h-[115px]" />
       </div>

@@ -1,5 +1,7 @@
 // import React from 'react'
 import React, { useEffect, useState } from "react";
+import imageBg from "./../../assets/rou-bg-img.png";
+import electronic from "../../assets/main-product_2.png";
 import CardDetails from "../Card/CardDetails";
 import Card from "../Card/Card";
 import Headers from "./Headers";
@@ -11,10 +13,10 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       try {
-        // const response = await fetch("https://fakestoreapi.com/products");
-        const response = await fetch(
-          "https://api.escuelajs.co/api/v1/products"
-        );
+        const response = await fetch("https://fakestoreapi.com/products");
+        // const response = await fetch(
+        //   "https://api.escuelajs.co/api/v1/products"
+        // );
         if (!response.ok) {
           throw new Error(
             `This is an HTTP error: The status is ${response.status}`
@@ -37,39 +39,112 @@ const Home = () => {
 
   return (
     <div>
-      <Headers/>
+      <Headers />
+      <div>
+        <img src={imageBg} alt="bg-img" />
+      </div>
       <section className="flex flex-col gap-3">
         {/* {data &&
         data?.map((datas) => <CardDetails key={datas.id} data={datas} />)
       }
       {console.log(data)} */}
       </section>
-      <section className="flex  flex-wrap gap-2">
-        {/* {console.log(data.image)} */}
-
-        {/* {data &&
-        data?.map((datas) => <Card key={datas.id} title={datas?.title} image={datas.image} price={datas?.price} />)
-        
-        } */}
-        {/* {console.log(data)} */}
+      <section className="flex  flex-wrap gap-2 w-[1140px]">
+        <div className="flex flex-col gap-3">
+          <div>
+            <h2 className="text-[40px] font-thin font-['Inter,sans']">
+              Jewellery
+            </h2>
+          </div>
+          <div>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+          <div className="flex gap-2">
+            {
+              data &&
+                data
+                  .filter((item) => item.category === "jewelery")
+                  .map((item) => (
+                    <Card
+                      key={item.id}
+                      title={item?.title}
+                      image={item.image}
+                      price={item?.price}
+                    />
+                  ))
+              // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
+              // data&&data.map((datass)=>(datass.category))
+            }
+          </div>
+        </div>
+      </section>
+      <section className="flex  flex-wrap gap-2 w-[1140px]">
         <div>
-      <h2>Jewellery</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </p>
-    </div>
+          <div>
+            <div>
+              <h2 className="text-[40px] font-thin font-['Inter,sans']">
+                Electronics
+              </h2>
+            </div>
+            <div>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+            </div>
+          </div>
+          <div className="w-[100%] flex ">
+            <div className="w-[40%]">
+              <img src={electronic} alt="ele-bg" className="w-[95%]" />
+            </div>
+            <div className="w-[55%] flex flex-wrap gap-3 ">
+              {
+                data &&
+                  data
+                    .filter((item) => item.category === "electronics")
+                    .map((item) => (
+                      <Card
+                        key={item.id}
+                        title={item?.title}
+                        image={item.image}
+                        price={item?.price}
+                      />
+                    ))
+                // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
+                // data&&data.map((datass)=>(datass.category))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="flex  flex-wrap gap-2">
+        <div>
+          <h2 className="text-[40px] font-thin font-['Inter,sans']">
+            MensClothing
+          </h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
         {
           data &&
             data
-              .filter((item) => ((item.category.name==="Clothes")))
+              .filter((item) => item.category === "men's clothing")
               .map((item) => (
                 <Card
                   key={item.id}
                   title={item?.title}
-                  image={item.images}
+                  image={item.image}
                   price={item?.price}
                 />
               ))
@@ -77,88 +152,35 @@ const Home = () => {
           // data&&data.map((datass)=>(datass.category))
         }
       </section>
-      <section>
-      <div>
-      <h2>Electronics</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </p>
-    </div>
-      {
+      <section className="flex  flex-wrap gap-2">
+        <div>
+          <h2 className="text-[40px] font-thin font-['Inter,sans']">
+            WomensClothing
+          </h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+        {
           data &&
-            data
-              .filter((item) => ((item.category.name==="Books")))
-              .map((item) => (
-                <Card
-                  key={item.id}
-                  title={item?.title}
-                  image={item.images}
-                  price={item?.price}
-                />
-              ))
-          // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
-          // data&&data.map((datass)=>(datass.category))
-        }
-      </section>
-      <section>
-      <div>
-      <h2>MensClothing</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </p>
-    </div>
-      {
-          data &&
-            data
-              .filter((item) => ((item.category.name==="Shoes")))
-              .map((item) => (
-                <Card
-                  key={item.id}
-                  title={item?.title}
-                  image={item.images}
-                  price={item?.price}
-                />
-              ))
-          // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
-          // data&&data.map((datass)=>(datass.category))
-        }
-      </section>
-       <section>
-       <div>
-      <h2>WomensClothing</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </p>
-    </div>
-      {
-          data &&
-            data.map((item)=>{
-              if(item.category.name==="Furniture"){
-                // console.log(item.category.name==="Furniture");
+            data.map((item) => {
+              if (item.category === "women's clothing") {
+                // console.log(item.category.name==="Furniture
 
-                return <Card key={item.id}  title={item.title} image={item.images} price={item.price}/>
+                return (
+                  <Card
+                    key={item.id}
+                    title={item.title}
+                    image={item.image}
+                    price={item.price}
+                  />
+                );
               }
             })
-              // .filter((item) => ((item.category.name==="Shoes")))
-              // .map((item) => (
-              //   <Card
-              //     key={item.id}
-              //     title={item?.title}
-              //     image={item.images}
-              //     price={item?.price}
-              //   />
-              // ))
-          // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
-          // data&&data.map((datass)=>(datass.category))
+         
         }
       </section>
     </div>
