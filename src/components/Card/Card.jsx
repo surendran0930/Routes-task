@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ image, title, price }) => {
   // console.log(image);
   return (
-    <div className=" w-[200px] shadow-xl h-max ">
+    <>
+     
+    <div className=" w-[200px] shadow-2xl h-max  ">
       <div className="flex justify-center">
         <img src={image} className="w-[115px] h-[115px]" />
       </div>
@@ -14,6 +17,7 @@ const Card = ({ image, title, price }) => {
         <p className="text-[#999] hover:text-[#000]">{price}</p>
       </div>
     </div>
+     </>
   );
 };
 

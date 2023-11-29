@@ -5,11 +5,13 @@ import electronic from "../../assets/main-product_2.png";
 import CardDetails from "../Card/CardDetails";
 import Card from "../Card/Card";
 import Headers from "./Headers";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  // const navigate =useNavigate();
   useEffect(() => {
     (async () => {
       try {
@@ -37,8 +39,10 @@ const Home = () => {
   }, []);
   console.log(data, "api value");
 
+
+
   return (
-    <div>
+    <div className="w-full  flex flex-col gap-9">
       <Headers />
       <div>
         <img src={imageBg} alt="bg-img" />
@@ -49,10 +53,10 @@ const Home = () => {
       }
       {console.log(data)} */}
       </section>
-      <section className="flex  flex-wrap gap-2 w-[1140px]">
-        <div className="flex flex-col gap-3">
+      <section className="flex  flex-wrap gap-2 m-auto w-[1140px]">
+        <div className="flex flex-col gap-5">
           <div>
-            <h2 className="text-[40px] font-thin font-['Inter,sans']">
+            <h2 className="text-[40px]  font-thin ">
               Jewellery
             </h2>
           </div>
@@ -64,18 +68,22 @@ const Home = () => {
               type and scrambled it to make a type specimen book.
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-5 justify-start" >
             {
               data &&
                 data
                   .filter((item) => item.category === "jewelery")
                   .map((item) => (
+                    <Link to={`product/${item.id}`} >
                     <Card
+                    
                       key={item.id}
                       title={item?.title}
                       image={item.image}
                       price={item?.price}
+                      
                     />
+                     </Link>
                   ))
               // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
               // data&&data.map((datass)=>(datass.category))
@@ -83,11 +91,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="flex  flex-wrap gap-2 w-[1140px]">
-        <div>
+      <section className="flex  flex-wrap gap-2 m-auto w-[1140px]">
+        <div className="flex flex-col gap-5">
           <div>
             <div>
-              <h2 className="text-[40px] font-thin font-['Inter,sans']">
+              <h2 className="text-[40px]  font-thin ">
                 Electronics
               </h2>
             </div>
@@ -102,20 +110,24 @@ const Home = () => {
           </div>
           <div className="w-[100%] flex ">
             <div className="w-[40%]">
-              <img src={electronic} alt="ele-bg" className="w-[95%]" />
+              <img src={electronic} alt="ele-bg" className="w-[90%]" />
             </div>
-            <div className="w-[55%] flex flex-wrap gap-3 ">
+            <div className="w-[55%] flex flex-wrap gap-3  items-center">
               {
                 data &&
                   data
                     .filter((item) => item.category === "electronics")
                     .map((item) => (
+                      <Link to={`product/${item.id}`} >
                       <Card
+                      
                         key={item.id}
                         title={item?.title}
                         image={item.image}
                         price={item?.price}
+                        
                       />
+                       </Link>
                     ))
                 // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
                 // data&&data.map((datass)=>(datass.category))
@@ -124,65 +136,90 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="flex  flex-wrap gap-2">
-        <div>
-          <h2 className="text-[40px] font-thin font-['Inter,sans']">
-            MensClothing
-          </h2>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
+      <section className="flex  flex-wrap gap-2 m-auto w-[1140px]">
+        <div className="flex flex-col gap-3">
+          <div>
+            <h2 className="text-[40px] font-thin  ">
+            men's clothing
+            </h2>
+          </div>
+          <div>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+          <div className="flex gap-5 justify-start">
+            {
+              data &&
+                data
+                  .filter((item) => item.category === "men's clothing")
+                  .map((item) => (
+                    <Link to={`product/${item.id}`} >
+                    <Card
+                    
+                      key={item.id}
+                      title={item?.title}
+                      image={item.image}
+                      price={item?.price}
+                      
+                    />
+                     </Link>
+                  ))
+              // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
+              // data&&data.map((datass)=>(datass.category))
+            }
+          </div>
         </div>
-        {
-          data &&
-            data
-              .filter((item) => item.category === "men's clothing")
-              .map((item) => (
-                <Card
-                  key={item.id}
-                  title={item?.title}
-                  image={item.image}
-                  price={item?.price}
-                />
-              ))
-          // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
-          // data&&data.map((datass)=>(datass.category))
-        }
       </section>
-      <section className="flex  flex-wrap gap-2">
-        <div>
-          <h2 className="text-[40px] font-thin font-['Inter,sans']">
-            WomensClothing
-          </h2>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </div>
-        {
-          data &&
-            data.map((item) => {
-              if (item.category === "women's clothing") {
-                // console.log(item.category.name==="Furniture
-
-                return (
-                  <Card
-                    key={item.id}
-                    title={item.title}
-                    image={item.image}
-                    price={item.price}
-                  />
-                );
+      <section className="flex m-auto flex-wrap gap-2 w-[1140px]">
+        <div className="flex flex-col gap-5">
+          <div>
+            <div>
+              <h2 className="text-[40px]  font-thin ">
+              women's clothing
+              </h2>
+            </div>
+            <div>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+            </div>
+          </div>
+          <div className="w-[100%] flex ">
+            <div className="w-[40%]">
+              <img src={electronic} alt="ele-bg" className="w-[90%]" />
+            </div>
+            <div className="w-[55%] flex flex-wrap gap-3 items-center">
+              {
+                data &&
+                  data
+                    .filter((item) => item.category === "women's clothing")
+                    .map((item) => (
+                      <Link to={`product/${item.id}`} >
+                      <Card
+                      
+                        key={item.id}
+                        title={item?.title}
+                        image={item.image}
+                        price={item?.price}
+                        
+                      />
+                       </Link>
+                    ))
+                // data&&data?.filter((item)=>console.log(item.category==="jewelery"))
+                // data&&data.map((datass)=>(datass.category))
               }
-            })
-         
-        }
+            </div>
+          </div>
+        </div>
       </section>
+     
     </div>
   );
 };

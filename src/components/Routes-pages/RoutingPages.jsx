@@ -14,10 +14,14 @@ const Pages = () => {
       {/* <Home/> */}
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/electronics' element={<Electronics/>}/>
+            <Route path='/electronics' element={<Electronics/>}>
+               {/* <Route path='/cardDetails/:id' element={<CardDetails/>}/> */}
+            </Route>
             <Route path='/jewelery' element={<Jewellery/>}/>
             <Route path='/mensClothing' element={<MensClothing/>}/>
             <Route path='/womensClothing' element={<WomensClothing/>}/>
+            <Route path='/product/:id' element={<CardDetails/>}/>
+            
            
         </Routes>
     </div>
