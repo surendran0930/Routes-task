@@ -28,12 +28,12 @@ const WomensClothing = () => {
     fetchWomenClothingData();
   }, []);
   return (
-    <div className="flex flex-col gap-7">
+    <div className="flex flex-col font-['inter']  gap-7">
     <div>
       <Headers />
     </div>
 
-    <div className="flex  flex-wrap gap-2 m-auto w-[1140px]">
+    <div className="flex  flex-wrap gap-2 m-auto justify-center w-[1140px]">
       <div className="flex flex-col gap-5">
         <div>
           <h2 className="text-[40px] text-center font-thin ">WomenClothing</h2>

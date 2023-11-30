@@ -47,16 +47,11 @@ const Home = () => {
       <div>
         <img src={imageBg} alt="bg-img" />
       </div>
-      <section className="flex flex-col gap-3">
-        {/* {data &&
-        data?.map((datas) => <CardDetails key={datas.id} data={datas} />)
-      }
-      {console.log(data)} */}
-      </section>
+     
       <section className="flex  flex-wrap gap-2 m-auto w-[1140px]">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6">
           <div>
-            <h2 className="text-[40px]  font-thin ">
+            <h2 className="text-[40px] font-['inter']    font-thin ">
               Jewellery
             </h2>
           </div>
@@ -92,10 +87,10 @@ const Home = () => {
         </div>
       </section>
       <section className="flex  flex-wrap gap-2 m-auto w-[1140px]">
-        <div className="flex flex-col gap-5">
-          <div>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <div>
-              <h2 className="text-[40px]  font-thin ">
+              <h2 className="text-[40px] font-['inter']   font-thin ">
                 Electronics
               </h2>
             </div>
@@ -110,7 +105,7 @@ const Home = () => {
           </div>
           <div className="w-[100%] flex ">
             <div className="w-[40%]">
-              <img src={electronic} alt="ele-bg" className="w-[90%]" />
+              <img src={electronic} alt="ele-bg" className="w-[95%]" />
             </div>
             <div className="w-[55%] flex flex-wrap gap-3  items-center">
               {
@@ -137,10 +132,10 @@ const Home = () => {
         </div>
       </section>
       <section className="flex  flex-wrap gap-2 m-auto w-[1140px]">
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-6">
           <div>
-            <h2 className="text-[40px] font-thin  ">
-            men's clothing
+            <h2 className="text-[40px] font-['inter']  font-thin  ">
+            Men's clothing
             </h2>
           </div>
           <div>
@@ -174,12 +169,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="flex m-auto flex-wrap gap-2 w-[1140px]">
-        <div className="flex flex-col gap-5">
-          <div>
+      <section className="flex m-auto flex-wrap gap-2 w-[1140px] mb-[30px]">
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <div>
-              <h2 className="text-[40px]  font-thin ">
-              women's clothing
+              <h2 className="text-[40px] font-['inter']  font-thin ">
+              Women's clothing
               </h2>
             </div>
             <div>
@@ -193,7 +188,7 @@ const Home = () => {
           </div>
           <div className="w-[100%] flex ">
             <div className="w-[40%]">
-              <img src={electronic} alt="ele-bg" className="w-[90%]" />
+              <img src={electronic} alt="ele-bg" className="w-[95%]" />
             </div>
             <div className="w-[55%] flex flex-wrap gap-3 items-center">
               {

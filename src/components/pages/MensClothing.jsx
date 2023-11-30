@@ -28,7 +28,7 @@ const MensClothing = ({}) => {
     fetchJewlleryData()
   },[])
   return (
-    <div className="flex flex-col gap-7">
+    <div className="flex flex-col font-['inter']  gap-7">
     <div>
       <Headers />
     </div>

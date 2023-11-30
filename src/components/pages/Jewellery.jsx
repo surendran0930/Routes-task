@@ -26,7 +26,7 @@ const Jewellery = ({}) => {
     fetchJewlleryData();
   }, []);
   return (
-    <div>
+    <div className="font-['inter'] ">
       <div>
         <Headers />
       </div>
@@ -36,8 +36,8 @@ const Jewellery = ({}) => {
           <div>
             <h2 className="text-[40px] text-center font-thin ">Jewellery</h2>
           </div>
-          <div>
-            <p>
+          <div className="text-justify ">
+            <p className="text-base">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
