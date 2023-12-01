@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Headers = () => {
   return (
-    <div className=' max-sm:hidden flex  text-[#000] font-["inter"] bg-[#f4f4f4]  justify-center gap-16 text-sm uppercase font-normal px-[10px] py-[15px]'>
+    <div className='max-sm:bg-orange-600 flex max-sm:w-[640px] max-sm:gap-5 text-[#000] font-["inter"] bg-[#f4f4f4]  justify-center gap-16 text-sm uppercase font-normal px-[10px] py-[15px]'>
       <div className="hover:text-[red]  px-[5px] py-[10px]">
         <Link to="/">
           <span>Home</span>
