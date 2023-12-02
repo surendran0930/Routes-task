@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import Card from "../Card/Card";
-import Headers from "./Headers";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import Card from '../Card/Card';
+import Headers from './Headers';
+import { Link } from 'react-router-dom';
 
 const Jewellery = ({}) => {
   const [jewData, setJewData] = useState([]);
   const fetchJewlleryData = async () => {
     try {
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch('https://fakestoreapi.com/products');
       if (!response.ok) {
         throw new Error(
           `This is an HTTP error: The status is ${response.status}`
@@ -47,7 +47,7 @@ const Jewellery = ({}) => {
             {
               jewData &&
                 jewData
-                  .filter((item) => item.category === "jewelery")
+                  .filter((item) => item.category === 'jewelery')
                   .map((item) => (
                     <Link to={`/product/${item.id}`}>
                       <Card

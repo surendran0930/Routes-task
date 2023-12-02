@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = ({ image, title, price }) => {
   // console.log(image);
   return (
     <>
-      <div className=" w-[200px] max-sm:w-[250px] font-['inter']  shadow-[0_1px_3px_rgba(0,0,0,.3),_0_1px_2px_rgba(0,0,0,.24)] h-max  ">
+      <div className=" w-[200px] max-sm:w-[250px] lg:w-[190px] font-['inter']  shadow-[0_1px_3px_rgba(0,0,0,.3),_0_1px_2px_rgba(0,0,0,.24)] h-max  ">
         <div className="flex justify-center p-4">
           <img src={image} className="w-[115px] h-[115px]" />
         </div>
