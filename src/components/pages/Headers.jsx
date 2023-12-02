@@ -13,15 +13,15 @@ const Headers = () => {
     <>
       <div
         onClick={() => setOpen(!open)}
-        className="px-[5px] py-[10px]  lg:hidden  "
+        className="px-[5px] py-[10px] w-6  md:hidden  "
       >
         {open ? <Menu /> : <Close />}
       </div>
 
       <div
         className={`${
-          !open ? 'top-20' : 'max-sm:top-[-490px] '
-        } max-md:absolute max-md:top-10 lg:flex lg:flex-row max-sm:w-[650px] md:w-[1200px] lg:w-[100%]  max-sm:gap-5  text-[#000] font-["inter"] bg-[#f4f4f4]  justify-center lg:gap-16 text-sm uppercase font-normal px-[10px] py-[15px] md:flex-col md:gap-1 max-sm:transition-all max-sm:duration-500 max-sm:ease-in  `}
+          !open ? 'top-20' : 'max-sm:top-[-490px]  '
+        } max-md:absolute max-md:top-10 md:flex md:flex-row md:gap-16 max-sm:w-[650px] md:w-[1200px] lg:w-[100%]  max-sm:gap-5  text-[#000] font-["inter"] bg-[#f4f4f4]  justify-center lg:gap-16 text-sm uppercase font-normal px-[10px] py-[15px] sm:flex-col  max-sm:transition-all max-sm:duration-1000 max-sm:ease-in  `}
       >
         <div className="hover:text-[red]  px-[5px] py-[10px]">
           <Link to="/">
